@@ -4,8 +4,8 @@ A web-based version of the "od" (octal dump) unix CLI command
 # Description
 
 The binary dump application is a filter that displays input values in three different formats. These format include:
-   1. Network Order: A stream of bytes presented in [network order](https://en.wikipedia.org/wiki/Endianness)
-   1. Memory Contents: An array of 64-bit structured similiar to the output of the octal dump program
+   1. Stream View: A stream of bytes presented in [network order](https://en.wikipedia.org/wiki/Endianness)
+   1. Memory View: An array of 64-bit structured similiar to the output of the octal dump program
    1. Encodings: A set of mappings from either 16-, 32-, or 64-bit values to varous encodings, e.g., [float16](https://en.wikipedia.org/wiki/Half-precision_floating-point_format)
 
 A *view-window* is used within each of these formats to highlight the set of bytes used as part of the input value. Each indivual byte can be displayed as either binary, octal, hexidecimal, ASCII, or decimal values.
@@ -22,10 +22,10 @@ There are three general output displays for this application: network order, mem
 
 A *view-window* is provided in each section to hightlight the current set of bytes used as the input values. This view-window can have a 16-bit, 32-bit, or 64-bit width. The data within the view-window can be displayed as either binary, octal, hexidecimal, ASCII, or decimal values.
 
-## Network Order
+## Stream View:
 The input values is interpreted as a stream of bytes. A 64-bit vector is provided that contains the defined *view-window*. The view-window can be moved forward and backward via the defined word size. The view-window can also be shifted by double-clicking on an individual byte. This byte becomes the starting point of the view-window. Note, however, this shifting of the window can result in data alignment issues.
 
-## Memory Contents
+## Memory View:
 Memory is displayed as an array of 64-bits, within a table containg 4 visable rows. The corresponding location of the *view-window* is depicted within the memory array. The values within this view-window may have a different order, to illustrate little endian or big endian byte order. The view-window is used as the source data for the Encoding 
 
 ## Encodings:
